@@ -2,7 +2,7 @@
   "name": "serverless-ewelink",
   "version": "1.0.0",
   "description": "",
-  "main": "api/toggle_device",
+  "main": "server",
   "scripts": {
     "start": "vercel dev",
     "deploy": "vercel deploy --prod"
@@ -19,9 +19,16 @@
   },
   "homepage": "https://github.com/DevelopGadget/serveless-ewelink#readme",
   "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/morgan": "^1.9.2",
     "@vercel/node": "^1.8.5"
   },
   "dependencies": {
-    "ewelink-api": "^3.1.1"
+    "compression": "^1.7.4",
+    "ewelink-api": "^3.1.1",
+    "express": "^4.17.1",
+    "helmet": "^4.3.1",
+    "morgan": "^1.10.0",
+    "nocache": "^2.1.0"
   }
 }
