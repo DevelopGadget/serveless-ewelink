@@ -12,11 +12,13 @@
         "paths": {
             "*": [
                 "node_modules/*",
-                "src/types/*"
+                "api/src/types/*"
             ]
         }
     },
     "include": [
-        "api/**/*"
-, "index.ts", "server.ts"    ]
+        "api/**/*",
+        "api/index.ts", 
+        "api/server.ts"    
+    ]
 }

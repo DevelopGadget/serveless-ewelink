@@ -5,7 +5,7 @@ import compression from 'compression';
 import cache from 'nocache';
 import DeviceRoutes from './src/routes/device.route';
 
-class Index {
+export default class Index {
   public app: express.Application;
 
   constructor() {
@@ -46,5 +46,3 @@ class Index {
     });
   }
 }
-
-export default new Index();

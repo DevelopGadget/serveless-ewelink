@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router } from 'api/src/types/express';
 import DeviceController from '../controllers/device.controller';
 
 class Device {

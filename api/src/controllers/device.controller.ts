@@ -1,5 +1,5 @@
 
-import { Response, Request } from 'express';
+import { Response, Request } from 'api/src/types/express';
 import ResponseData from '../models/response_data.model';
 import EwLinkCore from '../core/ewelink.core';
 

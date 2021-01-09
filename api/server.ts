@@ -4,7 +4,8 @@ import EweLinkCore from './src/core/ewelink.core';
 class Server {
   public async InitServer() {
     await EweLinkCore.InitEweLink();
-    App.RunServer();
+    const app = new App();
+    app.RunServer();
   }
 }
 
