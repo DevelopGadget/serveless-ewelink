@@ -1,0 +1,23 @@
+{
+  "name": "serveless-ewelink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/toggle_device",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevelopGadget/serveless-ewelink.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevelopGadget/serveless-ewelink/issues"
+  },
+  "homepage": "https://github.com/DevelopGadget/serveless-ewelink#readme",
+  "devDependencies": {
+    "@vercel/node": "^1.8.5"
+  }
+}
