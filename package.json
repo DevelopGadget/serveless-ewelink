@@ -2,9 +2,9 @@
   "name": "serverless-ewelink",
   "version": "1.0.0",
   "description": "",
-  "main": "api/index.ts",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node api/index.ts"
+    "start": "node api/index.js"
   },
   "repository": {
     "type": "git",
