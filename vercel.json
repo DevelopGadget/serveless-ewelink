@@ -1,16 +1,6 @@
 {
     "version": 2,
-    "routes": [
-      {
-        "headers": {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-          "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
-        },
-        "src": "/api/src/(.*)",
-        "dest": "server.js"
-      }
-    ],
+    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }],
     "env": {
       "PasswordEweLink": "@passwordewelink",
       "EmailEweLink": "@emailewelink"
@@ -22,12 +12,10 @@
       }
     },
     "builds": [
-      {
-        "src": "/api/server.ts",
-        "use": "@vercel/node",
-        "config": {
-          "maxLambdaSize": "50mb"
-        }
-      }
+      {"use":"@vercel/node@latest","src":"api/src/controllers/device.controller.js","config":{"zeroConfig":true}},
+      {"use":"@vercel/node@latest","src":"api/src/core/ewelink.core.js","config":{"zeroConfig":true}},
+      {"use":"@vercel/node@latest","src":"api/src/middlewares/device.middleware.js","config":{"zeroConfig":true}},
+      {"use":"@vercel/node@latest","src":"api/src/routes/device.route.js","config":{"zeroConfig":true}},
+      {"use":"@vercel/node@latest","src":"api/index.js","config":{"zeroConfig":true}}
     ]
   }

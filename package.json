@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/DevelopGadget/serveless-ewelink#readme",
   "devDependencies": {
-    "@types/compression": "^1.7.0",
-    "@types/morgan": "^1.9.2",
     "@vercel/node": "^1.8.5"
   },
   "dependencies": {
