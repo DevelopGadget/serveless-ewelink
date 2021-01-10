@@ -3,7 +3,6 @@ const EweLinkApiImport = require('ewelink-api');
 async function API() {
 
     if(typeof API.EweLinkApi === 'undefined') {
-        console.log('entro');
         API.EweLinkApi = new EweLinkApiImport({
             email: process.env.EmailEweLink,
             password: process.env.PasswordEweLink
@@ -15,9 +14,7 @@ async function API() {
     }
 
     if(typeof API.SocketEweLink === 'undefined') {
-        API.SocketEweLink = await API.EweLinkApi.openWebSocket(async data => {
-            console.log(data)
-        });
+        API.SocketEweLink = await API.EweLinkApi.openWebSocket(async data => {});
     }
 
 

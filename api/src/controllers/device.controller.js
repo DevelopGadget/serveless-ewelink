@@ -27,4 +27,16 @@ async function ToggleDevice(req, res) {
     }
 }
 
-module.exports = { ToggleDevice };
+async function GetDevices(req, res) {
+    try {
+        const EweLinkCore =  require('../core/ewelink.core').API;
+
+        const result = await EweLinkCore.EweLinkApi.getDevices();
+
+        return res.send({ IsError: false, Message: result, StatusCode: 200 });
+    } catch (error) {
+        return res.send({ IsError: true, Message: error, StatusCode: 400 });
+    }
+}
+
+module.exports = { ToggleDevice, GetDevices };
