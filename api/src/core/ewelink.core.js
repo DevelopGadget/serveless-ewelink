@@ -1,25 +1,27 @@
 const EweLinkApiImport = require('ewelink-api');
 
-async function Initialize() {
-    this.EweLinkApi = new EweLinkApiImport({
-        email: process.env.EmailEweLink,
-        password: process.env.PasswordEweLink
-    });
+async function API() {
+
+    if(typeof API.EweLinkApi === 'undefined') {
+        console.log('entro');
+        API.EweLinkApi = new EweLinkApiImport({
+            email: process.env.EmailEweLink,
+            password: process.env.PasswordEweLink
+        });
+    }
+
+    if(typeof API.EweLinkApiLogin === 'undefined') {
+        API.EweLinkApiLogin = await API.EweLinkApi.getCredentials();
+    }
+
+    if(typeof API.SocketEweLink === 'undefined') {
+        API.SocketEweLink = await API.EweLinkApi.openWebSocket(async data => {
+            console.log(data)
+        });
+    }
+
+
+
 }
 
-
-function ToggleDevice(deviceId, state) {
-    return new Promise(async (resolve, reject) => {
-        try {
-            const result = await this.EweLinkApi.setWSDevicePowerState(deviceId, state);
-            if(result && result.status !== 'ok') reject({ IsError: true, Message: result, StatusCode: 406 });
-            resolve({ IsError: false, Message: result, StatusCode: 200 });
-        } catch (error) {
-            reject({ IsError: true, Message: error, StatusCode: 400 });
-        }
-
-    });
-}
-
-
-module.exports = { Initialize, ToggleDevice };
+module.exports.API = API;
